@@ -65,6 +65,6 @@ docker exec myPackage service cron start
 
 ## 分工
 - 104321051 林煒星 : Docker Server建立, DockerHub 上傳, 網頁, package.py
-- 104321062 王子佳 : 資料搜集, 網頁, package.py
+- 104321062 王子佳 : Docker Server建立, 資料搜集, 網頁, package.py
 
 
