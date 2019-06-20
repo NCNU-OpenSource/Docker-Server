@@ -76,7 +76,7 @@ docker run --restart=always --name php-fpm -v /etc/localtime:/etc/localtime:ro -
 - [LSA-1072 Docker](https://docs.google.com/presentation/d/1wYhJkBQkx0jS-oyJG-2imdI7p93wti4XZqR9Jc49PxE/edit?usp=sharing)　
 - [Get Docker CE for Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
 - [把 Docker Image Push 到 Docker Hub](https://ithelp.ithome.com.tw/articles/10191139)
-- [利用 Docker 建構 Nginx + php-fpm 5.2 + mysql](http://blog.chengweichen.com/2015/05/docker-nginx-php-fpm-52-mysql.html?fbclid=IwAR1DuH4fd8Gt3cBI5pfpip3C8-2fR5m40GLV2vB45ALnBtmFBSLXRGH8EFE)
+- [利用 Docker 建構 Nginx + php-fpm 5.2(但我們用bitnami/phpfpm(PHP7)的版本) + mysql](http://blog.chengweichen.com/2015/05/docker-nginx-php-fpm-52-mysql.html?fbclid=IwAR1DuH4fd8Gt3cBI5pfpip3C8-2fR5m40GLV2vB45ALnBtmFBSLXRGH8EFE)
 
 ## 分工
 - 104321051 林煒星 : Docker Server建立, DockerHub 上傳, 網頁, package.py
