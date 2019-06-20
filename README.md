@@ -53,6 +53,18 @@ docker exec myPackage service cron start
 ```
 - cron 服務啟動後，container(容器)會每一分鐘自動爬資料到資料庫
 
+## Nginx + PHP
+- 讓Nginx可以跑PHP的網頁
+```
+docker run --restart=always --name php-fpm -v /etc/localtime:/etc/localtime:ro -v /works/www:/works/www -d seng96/php-fpm
+```
+- Nginx的部分
+```
+- docker run --restart=always --name nginx -v /etc/localtime:/etc/localtime:ro -p 80:80 -e NGINX_SITE_ROOT=/works/www -v /works/www:/works/www -v /works/nginx/log:/var/log/nginx/ --link php-fpm:phpfpm -d chengweisdocker/docker-nginx:phpfpm
+```
+- /works/www
+- 網頁部分放在伺服器的/works/www 目錄下
+
 ## 成果展示
 - 網頁呈現
 ![網頁](https://github.com/NCNU-OpenSource/Docker-Server/blob/master/%E5%AD%B8%E7%94%9F%E5%8C%85%E8%A3%B9%E6%9F%A5%E8%A9%A2%E7%B3%BB%E7%B5%B1.png)
