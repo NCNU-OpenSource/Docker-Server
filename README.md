@@ -48,12 +48,12 @@ docker run -d -ti --name myPackage seng96/package bash
 ```
 
 ## Image 設定
-- startup.sh 把 cron 服務開啟
+- startup.sh 設定
 ```
 #!bin/bash
 service cron start
 ```
-- cron 服務啟動後，container(容器)會每一分鐘自動爬資料到資料庫
+- 把 cron 服務開啟, cron 服務啟動後, container(容器)會每一分鐘自動爬資料到資料庫
 
 ## Dockerfile
 ```
