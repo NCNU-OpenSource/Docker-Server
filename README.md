@@ -48,11 +48,27 @@ docker run -d -ti --name myPackage seng96/package bash
 ```
 
 ## Image 設定
-- 開啟 cron 服務
+- startup.sh 把 cron 服務開啟
 ```
-docker exec myPackage service cron start
+#!bin/bash
+service cron start
 ```
 - cron 服務啟動後，container(容器)會每一分鐘自動爬資料到資料庫
+
+## Dockerfile
+```
+FROM ubuntu:18.04
+MAINTAINER Seng
+
+ADD package.py /root/package.py
+ADD startup.sh /
+ADD crontabfile /etc/cron.d/package-cron
+
+RUN apt-get update && apt-get install python3 python3-pip cron -y
+RUN crontab /etc/cron.d/package-cron
+
+CMD ["bash","/startup.sh"]
+```
 
 ## Nginx + PHP
 - 讓Nginx可以跑PHP的網頁
