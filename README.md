@@ -55,6 +55,12 @@ service cron start
 ```
 - 把 cron 服務開啟, cron 服務啟動後, container(容器)會每一分鐘自動爬資料到資料庫
 
+## Crontabfile
+```
+* * * * * python3 /root/package.py
+```
+- 每分鐘執行一次爬蟲
+
 ## Dockerfile
 ```
 FROM ubuntu:18.04
