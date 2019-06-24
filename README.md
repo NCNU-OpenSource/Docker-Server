@@ -107,7 +107,7 @@ server {
                fastcgi_index                   index.php;
                fastcgi_split_path_info         ^(.+\.php)(.*)$;
                include                         /etc/nginx/fastcgi_params;
-               fastcgi_param                   SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
+               fastcgi_param                   SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
         }
 }
 END
@@ -130,7 +130,7 @@ cat <<END > /etc/nginx/nginx.conf
                 gzip_disable "msie6";
                 gzip_min_length 256;
                 gzip_comp_level 4;
-                gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+                gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
             include /etc/nginx/conf.d/*.conf;
 }
 END
