@@ -93,19 +93,14 @@ docker run --restart=always --name php-fpm -v /etc/localtime:/etc/localtime:ro -
 #!bin/bash
 
 cat <<END > /etc/nginx/conf.d/default.conf
-
 server {
         listen 80 default_server;
-
         server_name localhost;
-
         # Useful logs for debug.
         error_log       /var/log/nginx/error.log;
         rewrite_log     on;
-
         root path;
         index index.php;
-
         # PHP FPM configuration.
         location ~* \.php$ {
                fastcgi_pass                    127.0.0.1:9000;
@@ -120,29 +115,22 @@ END
 cat <<END > /etc/nginx/nginx.conf
         user  nginx;
         worker_processes  1;
-
         pid        /var/run/nginx.pid;
-
         events {
             worker_connections  1024;
         }
-
         http {
             include       /etc/nginx/mime.types;
             default_type  application/octet-stream;
-
             sendfile       on;
             tcp_nopush     on;
             tcp_nodelay    on;
-
             keepalive_timeout  65;
-
             gzip on;
                 gzip_disable "msie6";
                 gzip_min_length 256;
                 gzip_comp_level 4;
                 gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
-
             include /etc/nginx/conf.d/*.conf;
 }
 END
@@ -164,7 +152,7 @@ SITE_ROOT=$(echo $NGINX_SITE_ROOT | sed 's/[\/&]/\\&/g')
 sed -i 's/root path/root '$SITE_ROOT'/g' /etc/nginx/conf.d/default.conf
 
 
-/usr/sbin/nginx -g 'daemon off;'
+/usr/sbin/nginx -g 'daemon off;
 ```
 
 ## 成果展示
