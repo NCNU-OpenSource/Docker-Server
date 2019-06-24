@@ -145,7 +145,7 @@ if [ -z "$PHPFPM_PORT_9000_TCP_ADDR" ]; then
         exit 1
 fi
 
-sed -i 's/127.0.0.1:9000/'$PHPFPM_PORT_9000_TCP_ADDR':'$PHPFPM_PORT_9000_TCP_PORT'/g' /etc/nginx/conf.d/default.conf
+sed -i 's/127.0.0.1:9000/'$PHPFPM_PORT_9000_TCP_ADDR':'$PHPFPM_PORT_9000_TCP_PORT'/g' /etc/nginx/conf.d/default.conf
 
 SITE_ROOT=$(echo $NGINX_SITE_ROOT | sed 's/[\/&]/\\&/g')
 
